@@ -1,0 +1,8 @@
+name: asif123456
+on:
+  create
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "from branch protection event triggered workflow"
