@@ -1,0 +1,27 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Deployment
+        id: deployment
+        run: |
+          echo "Creating deployment..."
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{
+            "ref": "${{ github.ref }}",
+            "environment": "production",  # Specify your environment
+            "description": "Deploying to production"
+          }' \
+          "https://api.github.com/repos/${{ github.repository }}/deployments"
