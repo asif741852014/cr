@@ -2,8 +2,6 @@ name: Deployment Workflow
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   deploy:
