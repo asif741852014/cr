@@ -23,7 +23,7 @@ jobs:
             -d '{
                "ref": "refs/heads/main",
                "payload": "{ \"deploy\": \"migrate\" }",
-               "description": "Deploy request from GitHub Actions",
+               "description": "Deploy request from GitHub Actions1234",
                "required_contexts": []  
              }'
 

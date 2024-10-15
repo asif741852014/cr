@@ -1,0 +1,12 @@
+name: Deployment Workflow
+
+on:
+  deployment
+
+jobs:
+  handle-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Deployment Created
+        run: |
+          echo "A new deployment has been created!"
