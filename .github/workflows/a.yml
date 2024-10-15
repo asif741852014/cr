@@ -1,7 +1,8 @@
 name: Deployment Workflow
 
 on:
-  deployment
+  deployment:
+    types: [created]
 
 jobs:
   handle-deployment:
